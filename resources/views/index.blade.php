@@ -25,10 +25,8 @@
                 @endforeach
                 </tbody>
             </table>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">{{ $films->links() }}</div>
-            <div class="col-md-3"></div>
+        <div class="center">
+            {{ $films->appends(['s' => $search])->links() }}
         </div>
     </div>
 @endsection

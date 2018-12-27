@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Laravel\Scout\Searchable;
 /**
  * @property   string film_name
  * @property  string series_name
@@ -12,5 +12,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Films extends Model
 {
+    use Searchable;
+
+    public function toSearchableArray()
+    {
+        return [
+            'film_name' => $this->film_name,
+            'series_name' => $this->series_name,
+        ];
+    }
+
     protected $table = 'parser_films';
 }

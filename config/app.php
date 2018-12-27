@@ -160,6 +160,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         cucxabeng\HtmlDom\HtmlDomServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
     ],
 
     /*
